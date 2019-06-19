@@ -38,34 +38,29 @@ public class Library {
 		} else {
 			System.exit(0);
 		}
-		System.out.println("a is " + all);
-		System.out.println("m is " + m);
-		System.out.println("s is " + s);
-		System.out.println("p is " + p);
+//		System.out.println("a is " + all);
+//		System.out.println("m is " + m);
+//		System.out.println("s is " + s);
+//		System.out.println("p is " + p);
 
 		String dataPath = input; 
 
 		ArrayList<File> resultFileNames = new ArrayList<File>();
-
 		File file = new File(dataPath);
 		File[] fileList = file.listFiles();
+		///System.out.println(fileList.length);
 
 		if (!all) {
-			//System.out.println("-------------------------- ls-----------------------------------");
 			for (File test : fileList) {
 				if (!test.getName().startsWith(".")) {
 					resultFileNames.add(test);
 				}
 			}
 		} else if (all) {
-
-			//System.out.println("-------------------------- ls(-a )-----------------------------------");
-
 			for (File test : fileList) {
 				resultFileNames.add(test);
 			}
 		}
-		//System.out.println("-------------------------- ls -(a)s -------------------------------------");
 
 		for (File test : resultFileNames) {
 			if (s) {
